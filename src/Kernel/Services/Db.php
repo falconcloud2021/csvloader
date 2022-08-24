@@ -1,8 +1,8 @@
 <?php
 
-namespace MyProject\Services;
+namespace Kernel\Services;
 
-use MyProject\Exceptions\DbException;
+use Kernel\Exceptions\DbException;
 
 class Db
 {

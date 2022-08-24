@@ -4,7 +4,7 @@ namespace Kernel\Controllers;
 
 use Kernel\Models\DataCsv;
 
-class DataController()
+class DataController extends AbstractController
 {
     public function view()
     {

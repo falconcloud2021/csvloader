@@ -18,7 +18,6 @@ try {
 
     }
 
-
     if (!$isRouteFound) {
         throw new \Kernel\Exceptions\NotFoundException();
     }
@@ -29,18 +28,14 @@ try {
 
     $controller = new $controllerName();
     $controller->$actionNmae(...$matches);
-} catch (\MyProject\Exceptions\DbException $e) {
-    $view = new \MyProject\View\View(__DIR__ . '/templates/errors');
+} catch (\Kernel\Exceptions\DbException $e) {
+    $view = new \Kernel\View\View(__DIR__ . '/templates/errors');
     $view->renderHtml('500.php', ['error' => $e->getMessage(), 500]);
-} catch (\MyProject\Exceptions\NotFoundException $e) {
-    $view = new \MyProject\View\View(__DIR__ . '/templates/errors');
+} catch (\Kernel\Exceptions\NotFoundException $e) {
+    $view = new \Kernel\View\View(__DIR__ . '/templates/errors');
     $view->renderHtml('404.php', ['error' => $e->getMessage()], 404);
-} catch (\MyProject\Exceptions\ForbiddenEception $e) {
-    $view = new \MyProject\View\View(__DIR__ . '/templates/errors');
+} catch (\Kernel\Exceptions\ForbiddenEception $e) {
+    $view = new \Kernel\View\View(__DIR__ . '/templates/errors');
     $view->renderHtml('403.php', ['error' => $e->getMessage(), 403]);
 }
 
-// catch (\MyProject\Exceptions\UnauthorizedException $e) {
-//     $view = new \MyProject\View\View(__DIR__ . '/templates/errors');
-//     $view->renderHtml('401.php', ['error' => $e->getMessage(), 401]);
-// }

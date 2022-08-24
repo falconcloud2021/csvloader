@@ -1,3 +1,4 @@
+
 <div class="clearfix"></div>
 	
   <div class="content-wrapper">
@@ -8,6 +9,7 @@
             <div class="card-body">
               <h5 class="card-title">Data table</h5>
               <div class="table-responsive">
+                <?php foreach ($data as $row): ?>
                 <table class="table table-striped table-hover">
                   <thead>
                     <tr>
@@ -28,24 +30,9 @@
                       <td>@mdo</td>
                       <td>@mdo</td>
                     </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                      <td>@mdo</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry the Bird</td>
-                      <td>@mdo</td>
-                      <td>28</td>
-                      <td>@twitter</td>
-                      <td>@mdo</td>
-                    </tr>
                   </tbody>
                 </table> 
+                <?php endforeach; ?>
               </div> 
             </div>
           </div>
